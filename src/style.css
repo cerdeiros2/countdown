@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+}
+
+#app {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  color: #333;
+  width: 100%;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.countdown-display {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.countdown-unit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 15px;
+  border-radius: 10px;
+  color: white;
+}
+
+.countdown-value {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.countdown-label {
+  font-size: 12px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.message {
+  font-size: 20px;
+  font-weight: 600;
+  color: #667eea;
+  min-height: 25px;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .countdown-container {
+    padding: 40px 30px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .countdown-display {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .countdown-value {
+    font-size: 40px;
+  }
+
+  .countdown-label {
+    font-size: 11px;
+  }
+
+  .message {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .countdown-display {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .countdown-value {
+    font-size: 32px;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+
+  .message {
+    font-size: 16px;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .countdown-container {
+    padding: 40px 30px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .countdown-value {
+    font-size: 48px;
+    min-width: 80px;
+  }
+
+  .countdown-separator {
+    font-size: 36px;
+  }
+
+  .countdown-label {
+    font-size: 12px;
+  }
+
+  .message {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .countdown-value {
+    font-size: 36px;
+    min-width: 60px;
+  }
+
+  .countdown-separator {
+    font-size: 28px;
+  }
+
+  .countdown-label {
+    font-size: 11px;
+  }
+
+  .message {
+    font-size: 16px;
+  }
+}
