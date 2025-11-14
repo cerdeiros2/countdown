@@ -36,8 +36,11 @@ function updateCountdown() {
           messageEl.textContent = '🔥 Menos de una semana...';
         }
         else {
-          if (days === 0) {
-            messageEl.textContent = '🎯 ¡Hoy es el día!, buen viaje 😊🚂';
+          if (days === 0 && hours <= 5) {
+            messageEl.textContent = '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE! ';
+          }
+          else if (days === 0) {
+            messageEl.textContent = '🎯 ¡Hoy es el día!';
           }
 
         }
