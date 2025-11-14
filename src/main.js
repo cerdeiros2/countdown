@@ -22,12 +22,29 @@ function updateCountdown() {
   // Mostrar mensaje cuando se llegue
   const messageEl = document.getElementById('message');
   if (diff <= 0) {
-    messageEl.textContent = '¡Llegó el momento! 🎉';
+    messageEl.textContent = '¡Llegó el momento! 🎉🎊';
   } else {
-    messageEl.textContent = '';
+    if (days > 14) {
+      messageEl.textContent = '⏳ Más de dos semanas aún...';
+    }
+    else {
+      if (days > 7) {
+        messageEl.textContent = '📅 Menos de dos semanas...';
+      }
+      else {
+        if (days < 7 && days >= 1) {
+          messageEl.textContent = '🔥 Menos de una semana...';
+        }
+        else {
+          if (days === 0) {
+            messageEl.textContent = '🎯 ¡Hoy es el día!, buen viaje 😊🚂';
+          }
+
+        }
+      }
+    }
   }
 }
-
 // Actualizar cada segundo
 updateCountdown();
 setInterval(updateCountdown, 1000);
