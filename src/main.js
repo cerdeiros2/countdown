@@ -9,12 +9,14 @@ function updateCountdown() {
   const diff = targetDate - now;
 
   let days = 0, hours = 0, minutes = 0, seconds = 0;
+  let trigger = false;
 
-  if (diff > 0) {
+  if (diff > 1000) {
     days = Math.floor(diff / (1000 * 60 * 60 * 24));
     hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    trigger = true;
   }
 
   // Actualizar elementos HTML
@@ -26,31 +28,26 @@ function updateCountdown() {
 
   // Mostrar mensaje cuando se llegue
   const messageEl = document.getElementById('message');
-  if (diff <= 0) {
+  if (!trigger) {
     messageEl.textContent = '¡Llegó el momento! 🎉🎊';
+  } else if (days > 14) {
+    messageEl.textContent = '⏳ Más de dos semanas aún...';
+  } else if (days == 14) {
+    messageEl.textContent = '📆 ¡Faltan dos semanas exactas!';
+  } else if (days > 7) {
+    messageEl.textContent = '📅 Menos de dos semanas...';
+  } else if (days == 7) {
+    messageEl.textContent = '🗓️ ¡Falta una semana exacta!';
+  } else if (days > 1) {
+    messageEl.textContent = '🔥 Menos de una semana...';
+  } else if (days == 1) {
+    messageEl.textContent = '⏰ ¡Falta solo un día!';
+  } else if (days == 0 && hours > 5) {
+    messageEl.textContent = '⌛ ¡Hoy es el día, pero aún falta un poco!';
+  } else if (hours <= 5) {
+    messageEl.textContent = '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!';
   } else {
-    if (days > 14) {
-      messageEl.textContent = '⏳ Más de dos semanas aún...';
-    }
-    else {
-      if (days > 7) {
-        messageEl.textContent = '📅 Menos de dos semanas...';
-      }
-      else {
-        if (days < 7 && days >= 1) {
-          messageEl.textContent = '🔥 Menos de una semana...';
-        }
-        else {
-          if (days === 0 && hours <= 5) {
-            messageEl.textContent = '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE! ';
-          }
-          else if (days === 0) {
-            messageEl.textContent = '🎯 ¡Hoy es el día!';
-          }
-
-        }
-      }
-    }
+    messageEl.textContent = '🎯 ¡Hoy es el día!';
   }
 }
 // Actualizar cada segundo
