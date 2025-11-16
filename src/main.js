@@ -42,12 +42,10 @@ function updateCountdown() {
     messageEl.textContent = '🔥 Menos de una semana...';
   } else if (days == 1) {
     messageEl.textContent = '⏰ ¡Falta solo un día!';
-  } else if (days == 0 && hours > 5) {
+  } else if (hours > 5) {
     messageEl.textContent = '⌛ ¡Hoy es el día, pero aún falta un poco!';
-  } else if (hours <= 5) {
-    messageEl.textContent = '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!';
   } else {
-    messageEl.textContent = '🎯 ¡Hoy es el día!';
+    messageEl.textContent = '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!';
   }
 }
 // Actualizar cada segundo
