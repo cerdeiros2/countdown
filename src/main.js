@@ -50,4 +50,4 @@ function updateCountdown() {
 }
 // Actualizar cada segundo
 updateCountdown();
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 250);
