@@ -33,11 +33,11 @@ function updateCountdown() {
   } else if (days > 14) {
     messageEl.textContent = '⏳ Más de dos semanas aún...';
   } else if (days == 14) {
-    messageEl.textContent = '📆 ¡Faltan dos semanas!';
+    messageEl.textContent = '📆 ¡Faltan dos semanas justas!';
   } else if (days > 7) {
     messageEl.textContent = '📅 Menos de dos semanas...';
   } else if (days == 7) {
-    messageEl.textContent = '🗓️ ¡Falta una semana!';
+    messageEl.textContent = '🗓️ ¡Falta justo una semana!';
   } else if (days > 1) {
     messageEl.textContent = '🔥 Menos de una semana...';
   } else if (days == 1) {
