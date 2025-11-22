@@ -34,7 +34,7 @@ function updateCountdown() {
     messageEl.textContent = '⏳ Más de dos semanas aún...';
   } else if (days == 14) {
     messageEl.textContent = '📆 ¡Faltan dos semanas justas!';
-  } else if (days > 10) {
+  } else if (days >= 10) {
     messageEl.textContent = '📅 Menos de dos semanas...';
   } else if (days > 7) {
     messageEl.textContent = '📅 Menos de diez días...';
