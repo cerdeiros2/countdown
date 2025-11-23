@@ -38,7 +38,7 @@ const messages = {
   oneDay: '⏰ ¡Falta solo un día!',
   today: '⌛ ¡Hoy es el día, pero aún falta un poco!',
   imminent: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!',
-  triggerMessage: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!'
+  triggerMessage: 'POR FIN YA EN CASA 🎉🏡 ¡A DISFRUTAR!'
 };
 
 
