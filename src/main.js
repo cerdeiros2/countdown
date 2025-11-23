@@ -5,6 +5,12 @@ const targetDate = new Date(2025, 11, 2, 19, 46, 0);
 
 
 // mensajes parametrizados
+const main_messages = {
+  title: 'Cuenta Atrás',
+  subtitle: '2 de Diciembre de 2025 a las 19:46'
+}
+document.getElementById('title').textContent = main_messages.title;
+document.getElementById('subtitle').textContent = main_messages.subtitle;
 const messages = {
   moreThanTwoWeeks: '⏳ Más de dos semanas aún...',
   twoWeeks: '📆 ¡Faltan dos semanas justas!',
