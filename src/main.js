@@ -4,13 +4,14 @@ import './style.css'
 const targetDate = new Date(2025, 11, 2, 19, 46, 0);
 
 
-// mensajes parametrizados
-const main_messages = {
+
+// Mensajes parametrizados
+const mainMessages = {
   title: 'Cuenta Atrás',
   subtitle: '2 de Diciembre de 2025 a las 19:46'
-}
-document.getElementById('title').textContent = main_messages.title;
-document.getElementById('subtitle').textContent = main_messages.subtitle;
+};
+document.getElementById('title').textContent = mainMessages.title;
+document.getElementById('subtitle').textContent = mainMessages.subtitle;
 const messages = {
   moreThanTwoWeeks: '⏳ Más de dos semanas aún...',
   twoWeeks: '📆 ¡Faltan dos semanas justas!',
@@ -21,7 +22,7 @@ const messages = {
   oneDay: '⏰ ¡Falta solo un día!',
   today: '⌛ ¡Hoy es el día, pero aún falta un poco!',
   imminent: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!',
-  trigger_message: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!'
+  triggerMessage: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!'
 };
 
 // Función para actualizar la cuenta atrás
@@ -50,7 +51,7 @@ function updateCountdown() {
   // Mostrar mensaje cuando se llegue
   const messageEl = document.getElementById('message');
   if (!trigger) {
-    messageEl.textContent = messages.trigger_message;
+    messageEl.textContent = messages.triggerMessage;
   } else if (days > 14) {
     messageEl.textContent = messages.moreThanTwoWeeks;
   } else if (days == 14) {
