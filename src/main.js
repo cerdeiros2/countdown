@@ -14,7 +14,8 @@ const messages = {
   lessThanOneWeek: '🔥 Menos de una semana...',
   oneDay: '⏰ ¡Falta solo un día!',
   today: '⌛ ¡Hoy es el día, pero aún falta un poco!',
-  imminent: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!'
+  imminent: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!',
+  trigger_message: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!'
 };
 
 // Función para actualizar la cuenta atrás
@@ -43,7 +44,7 @@ function updateCountdown() {
   // Mostrar mensaje cuando se llegue
   const messageEl = document.getElementById('message');
   if (!trigger) {
-    messageEl.textContent = '¡Llegó el momento! 🎉🎊';
+    messageEl.textContent = messages.trigger_message;
   } else if (days > 14) {
     messageEl.textContent = messages.moreThanTwoWeeks;
   } else if (days == 14) {
