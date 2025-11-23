@@ -3,6 +3,20 @@ import './style.css'
 // Fecha objetivo: 2 de Diciembre de 2025 a las 19:46
 const targetDate = new Date(2025, 11, 2, 19, 46, 0);
 
+
+// mensajes parametrizados
+const messages = {
+  moreThanTwoWeeks: '⏳ Más de dos semanas aún...',
+  twoWeeks: '📆 ¡Faltan dos semanas justas!',
+  lessThanTwoWeeks: '📅 Menos de dos semanas...',
+  lessThanTenDays: '📅 Menos de diez días...',
+  oneWeek: '🗓️ ¡Falta justo una semana!',
+  lessThanOneWeek: '🔥 Menos de una semana...',
+  oneDay: '⏰ ¡Falta solo un día!',
+  today: '⌛ ¡Hoy es el día, pero aún falta un poco!',
+  imminent: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!'
+};
+
 // Función para actualizar la cuenta atrás
 function updateCountdown() {
   const now = new Date();
@@ -31,23 +45,23 @@ function updateCountdown() {
   if (!trigger) {
     messageEl.textContent = '¡Llegó el momento! 🎉🎊';
   } else if (days > 14) {
-    messageEl.textContent = '⏳ Más de dos semanas aún...';
+    messageEl.textContent = messages.moreThanTwoWeeks;
   } else if (days == 14) {
-    messageEl.textContent = '📆 ¡Faltan dos semanas justas!';
+    messageEl.textContent = messages.twoWeeks;
   } else if (days >= 10) {
-    messageEl.textContent = '📅 Menos de dos semanas...';
+    messageEl.textContent = messages.lessThanTwoWeeks;
   } else if (days > 7) {
-    messageEl.textContent = '📅 Menos de diez días...';
+    messageEl.textContent = messages.lessThanTenDays;
   } else if (days == 7) {
-    messageEl.textContent = '🗓️ ¡Falta justo una semana!';
+    messageEl.textContent = messages.oneWeek;
   } else if (days > 1) {
-    messageEl.textContent = '🔥 Menos de una semana...';
+    messageEl.textContent = messages.lessThanOneWeek;
   } else if (days == 1) {
-    messageEl.textContent = '⏰ ¡Falta solo un día!';
+    messageEl.textContent = messages.oneDay;
   } else if (hours > 5) {
-    messageEl.textContent = '⌛ ¡Hoy es el día, pero aún falta un poco!';
+    messageEl.textContent = messages.today;
   } else {
-    messageEl.textContent = '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!';
+    messageEl.textContent = messages.imminent;
   }
 }
 // Actualizar cada segundo
