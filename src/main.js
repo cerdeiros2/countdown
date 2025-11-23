@@ -1,17 +1,33 @@
 import './style.css'
 
-// Fecha objetivo: 2 de Diciembre de 2025 a las 19:46
-const targetDate = new Date(2025, 11, 2, 19, 46, 0);
+// ===============================
+// CONFIGURACIÓN DE LA CUENTA ATRÁS
+// ===============================
+
+// Fecha objetivo: 2 de Diciembre de 2025 a las 19:46 (mes 11 = diciembre, 0-indexed)
+const target_date =
+{
+  targetYear: 2025,
+  targetMonth: 12,
+  targetDay: 2,
+  targetHour: 19,
+  targetMinute: 46,
+}
 
 
+// Asignar el nombre del mes usando un array
+const monthNames = [
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+];
+target_date.monthName = monthNames[target_date.targetMonth - 1] || 'Brumario';
 
-// Mensajes parametrizados
+// Mensajes principales para el título y subtítulo
 const mainMessages = {
   title: 'Cuenta Atrás',
-  subtitle: '2 de Diciembre de 2025 a las 19:46'
+  subtitle: `${target_date.targetDay} de ${target_date.monthName} de ${target_date.targetYear} a las ${target_date.targetHour}:${target_date.targetMinute}`
 };
-document.getElementById('title').textContent = mainMessages.title;
-document.getElementById('subtitle').textContent = mainMessages.subtitle;
+// Mensajes dinámicos según el tiempo restante
 const messages = {
   moreThanTwoWeeks: '⏳ Más de dos semanas aún...',
   twoWeeks: '📆 ¡Faltan dos semanas justas!',
@@ -25,14 +41,41 @@ const messages = {
   triggerMessage: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!'
 };
 
-// Función para actualizar la cuenta atrás
+
+
+
+// ===============================
+// FUNCIÓN PRINCIPAL DE LA CUENTA ATRÁS
+// ===============================
+
+// Crear el objeto Date para la fecha objetivo
+const targetDate = new Date(
+  target_date.targetYear,
+  target_date.targetMonth - 1, // Restar 1 porque los meses en JS son 0-indexed
+  target_date.targetDay,
+  target_date.targetHour,
+  target_date.targetMinute,
+  0
+);
+
+// Mostrar título y subtítulo en la página
+document.getElementById('title').textContent = mainMessages.title;
+document.getElementById('subtitle').textContent = mainMessages.subtitle;
+
+
+/**
+ * Calcula el tiempo restante y actualiza la interfaz cada segundo.
+ * Muestra mensajes dinámicos según el tiempo que falta para el evento.
+ */
 function updateCountdown() {
   const now = new Date();
-  const diff = targetDate - now;
+  const diff = targetDate - now; // Diferencia en milisegundos
 
+  // Inicializar valores por defecto
   let days = 0, hours = 0, minutes = 0, seconds = 0;
   let trigger = false;
 
+  // Solo calcular si falta más de 1 segundo
   if (diff > 1000) {
     days = Math.floor(diff / (1000 * 60 * 60 * 24));
     hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -41,16 +84,16 @@ function updateCountdown() {
     trigger = true;
   }
 
-  // Actualizar elementos HTML
-
+  // Actualizar los valores en pantalla
   document.getElementById('days').textContent = String(days).padStart(2, '0');
   document.getElementById('hours').textContent = String(hours).padStart(2, '0');
   document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
   document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
-  // Mostrar mensaje cuando se llegue
+  // Seleccionar el mensaje adecuado según el tiempo restante
   const messageEl = document.getElementById('message');
   if (!trigger) {
+    // Evento ya iniciado
     messageEl.textContent = messages.triggerMessage;
   } else if (days > 14) {
     messageEl.textContent = messages.moreThanTwoWeeks;
@@ -72,6 +115,13 @@ function updateCountdown() {
     messageEl.textContent = messages.imminent;
   }
 }
-// Actualizar cada segundo
+
+// ===============================
+// INICIALIZACIÓN Y ACTUALIZACIÓN AUTOMÁTICA
+// ===============================
+
+// Ejecutar la función al cargar la página
 updateCountdown();
+// Actualizar la cuenta atrás cada 250 milisegundos
 setInterval(updateCountdown, 250);
+
