@@ -109,7 +109,7 @@ function updateCountdown() {
     messageEl.textContent = messages.lessThanOneWeek;
   } else if (days == 1) {
     messageEl.textContent = messages.oneDay;
-  } else if (hours > 19) {
+  } else if (hours > 14) {
     messageEl.textContent = messages.today;
   } else {
     messageEl.textContent = messages.imminent;
