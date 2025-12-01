@@ -35,7 +35,7 @@ const messages = {
   lessThanTenDays: '📅 Menos de diez días...',
   oneWeek: '🗓️ ¡Falta justo una semana!',
   lessThanOneWeek: '🔥 Menos de una semana...',
-  oneDay: '⏰ ¡Falta solo un día!',
+  oneDay: '⏰ ¡Mañana... Por fin mañana!',
   today: '⌛ ¡Hoy es el día, pero aún falta un poco!',
   imminent: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!',
   triggerMessage: 'POR FIN YA EN CASA 🎉🏡 ¡A DISFRUTAR!'
@@ -109,7 +109,7 @@ function updateCountdown() {
     messageEl.textContent = messages.lessThanOneWeek;
   } else if (days == 1) {
     messageEl.textContent = messages.oneDay;
-  } else if (hours > 5) {
+  } else if (hours > 19) {
     messageEl.textContent = messages.today;
   } else {
     messageEl.textContent = messages.imminent;
