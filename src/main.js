@@ -111,7 +111,7 @@ function updateCountdown() {
   } else if (days == 1) {
     messageEl.textContent = messages.oneDay;
   } else if (hours > 12) {
-    messageEl.textContent = messages.today;
+    messageEl.textContent = messages.comming;
   } else if (hours > 5) {
     messageEl.textContent = messages.today;
   } else {
