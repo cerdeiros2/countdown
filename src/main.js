@@ -110,7 +110,7 @@ function updateCountdown() {
     messageEl.textContent = messages.lessThanOneWeek;
   } else if (days == 1) {
     messageEl.textContent = messages.oneDay;
-  } else if (hours > 12) {
+  } else if (hours > 13) {
     messageEl.textContent = messages.comming;
   } else if (hours > 5) {
     messageEl.textContent = messages.today;
