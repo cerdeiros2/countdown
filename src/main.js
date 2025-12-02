@@ -10,8 +10,8 @@ const target_date =
   targetYear: 2025,
   targetMonth: 12,
   targetDay: 2,
-  targetHour: 19,
-  targetMinute: 46,
+  targetHour: 20,
+  targetMinute: 14,
 }
 
 
