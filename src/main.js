@@ -9,9 +9,9 @@ const target_date =
 {
   targetYear: 2025,
   targetMonth: 12,
-  targetDay: 2,
-  targetHour: 20,
-  targetMinute: 14,
+  targetDay: 19,
+  targetHour: 14,
+  targetMinute: 00,
 }
 
 
@@ -38,8 +38,8 @@ const messages = {
   oneDay: '⏰ ¡Mañana... Por fin mañana!',
   comming: '⏳ Ya casi casi...',
   today: '⌛ ¡Hoy es el día, pero aún falta un poco!',
-  imminent: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!',
-  triggerMessage: 'POR FIN YA EN CASA 🎉🏡 ¡A DISFRUTAR!'
+  imminent: '😊 YA ESTAMOS, CONTANDO LOS FUCKING SEGUNDOS',
+  triggerMessage: 'POR FIN  🎉🏡'
 };
 
 
