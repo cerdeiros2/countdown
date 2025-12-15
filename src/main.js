@@ -11,7 +11,7 @@ const target_date =
   targetMonth: 12,
   targetDay: 19,
   targetHour: 14,
-  targetMinute: 00,
+  targetMinute: 0,
 }
 
 
