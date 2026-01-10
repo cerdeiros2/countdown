@@ -7,11 +7,11 @@ import './style.css'
 // Fecha objetivo: 2 de Diciembre de 2025 a las 19:46 (mes 11 = diciembre, 0-indexed)
 const target_date =
 {
-  targetYear: 2025,
-  targetMonth: 12,
-  targetDay: 2,
-  targetHour: 20,
-  targetMinute: 14,
+  targetYear: 2026,
+  targetMonth: 1,
+  targetDay: 16,
+  targetHour: 12,
+  targetMinute: 50,
 }
 
 
