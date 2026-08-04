@@ -8,10 +8,10 @@ import './style.css'
 const target_date =
 {
   targetYear: 2026,
-  targetMonth: 1,
-  targetDay: 16,
-  targetHour: 12,
-  targetMinute: 50,
+  targetMonth: 8,
+  targetDay: 14,
+  targetHour: 14,
+  targetMinute: 0,
 }
 
 
@@ -24,7 +24,7 @@ target_date.monthName = monthNames[target_date.targetMonth - 1] || 'Brumario';
 
 // Mensajes principales para el título y subtítulo
 const mainMessages = {
-  title: 'Cuenta Atrás',
+  title: 'Cuenta Atrás para la Libertad',
   subtitle: `${target_date.targetDay} de ${target_date.monthName} de ${target_date.targetYear} a las ${target_date.targetHour}:${target_date.targetMinute}`
 };
 // Mensajes dinámicos según el tiempo restante
@@ -38,8 +38,8 @@ const messages = {
   oneDay: '⏰ ¡Mañana... Por fin mañana!',
   comming: '⏳ Ya casi casi...',
   today: '⌛ ¡Hoy es el día, pero aún falta un poco!',
-  imminent: '😊🚂 YA EN EL TREN 🚄💨  ¡BUEN VIAJE!',
-  triggerMessage: 'POR FIN YA EN CASA 🎉🏡 ¡A DISFRUTAR!'
+  imminent: '😊SE HUELE LA LIBERTAD',
+  triggerMessage: 'LIBREEEEE'
 };
 
 
