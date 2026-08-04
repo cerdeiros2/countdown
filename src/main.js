@@ -25,7 +25,7 @@ target_date.monthName = monthNames[target_date.targetMonth - 1] || 'Brumario';
 // Mensajes principales para el título y subtítulo
 const mainMessages = {
   title: 'Cuenta Atrás para la Libertad de Ander',
-  subtitle: `${target_date.targetDay} de ${target_date.monthName} de ${target_date.targetYear} a las ${target_date.targetHour}:${target_date.targetMinute} + 0`
+  subtitle: `${target_date.targetDay} de ${target_date.monthName} de ${target_date.targetYear} a las ${target_date.targetHour}:${target_date.targetMinute}0`
 };
 // Mensajes dinámicos según el tiempo restante
 const messages = {
